@@ -1,0 +1,56 @@
+
+[cfg]
+ver  : v1.0
+date : 20170505
+
+[PanicTriage]
+
+item1 = MIPIDSI
+item2 = halt error
+item3 = Explore Failure
+item4 = FED err
+item5 = WDT timeout
+item6 = Boot Failure
+item7 = System hang
+item8 = Userspace
+item9 = EFI
+
+
+[MIPIDSI]
+step1 = GetMIPIScript
+
+[halt error]
+step1 = GetJebdump
+step2 = Fail_Flag
+step3 = GetJebdumpZiponly
+
+[Explore Failure]
+step1 = GetJebdump
+step2 = Fail_Flag
+step3 = GetJebdumpZiponly
+
+[FED err]
+step1 = GetJebdump
+step2 = Fail_Flag
+step3 = GetJebdumpZiponly
+
+[WDT timeout]
+step1 = GetJebdump
+step2 = Fail_Flag
+step3 = GetJebdumpZiponly
+
+[Boot Failure]
+step1 = ToF1FA
+
+[System hang]
+step1 = GetRebootLog
+step2 = GetBurninLog
+
+[Userspace]
+step1 = GetRebootLog
+
+[EFI]
+step1 = GetRebootLog
+
+
+
